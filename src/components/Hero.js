@@ -1,14 +1,13 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
+import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
     <section className="bg-[#FFFAF0] text-[#1F1F1F] py-24 font-outfit">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-16">
-        
         {/* Left Section */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -16,11 +15,13 @@ const Hero = () => {
           transition={{ duration: 0.6 }}
           className="flex-1"
         >
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-4"> 
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-4">
             Hello, I’m <span className="text-[#92400e]">Dray</span>
           </h1>
           <p className="text-lg text-[#333] max-w-xl mb-8">
-            I build modern, accessible websites that blend clean design with seamless functionality. Focused on delivering top-notch user experiences for growing brands.
+            I build modern, accessible websites that blend clean design with
+            seamless functionality. Focused on delivering top-notch user
+            experiences for growing brands.
           </p>
 
           <div className="flex gap-4 flex-wrap">
@@ -58,7 +59,7 @@ const Hero = () => {
         </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

@@ -1,30 +1,30 @@
-'use client'
+"use client";
 
-import { Mail, Phone, Github, Linkedin } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { Mail, Phone, Github, Linkedin } from "lucide-react";
+import { motion } from "framer-motion";
 
 const contactLinks = [
   {
-    label: 'samueldray180@gmail.com',
-    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=samueldray180@gmail.com',
+    label: "samueldray180@gmail.com",
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=samueldray180@gmail.com",
     icon: Mail,
   },
   {
-    label: '+234 816 818 1218',
-    href: 'tel:+2348168181218',
+    label: "+234 816 818 1218",
+    href: "tel:+2348168181218",
     icon: Phone,
   },
   {
-    label: 'github.com/Dray-bot',
-    href: 'https://github.com/Dray-bot',
+    label: "github.com/Dray-bot",
+    href: "https://github.com/Dray-bot",
     icon: Github,
   },
   {
-    label: 'linkedin.com/in/ayomide-ajibola-4989a2324',
-    href: 'https://www.linkedin.com/in/ayomide-ajibola-4989a2324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+    label: "linkedin.com/in/ayomide-ajibola-4989a2324",
+    href: "https://www.linkedin.com/in/ayomide-ajibola-4989a2324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     icon: Linkedin,
   },
-]
+];
 
 const Contact = () => {
   return (
@@ -48,7 +48,8 @@ const Contact = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-lg md:text-xl text-[#1f2937]/80"
         >
-          Whether it’s a startup idea, personal brand, or real estate platform — I’m ready. Reach out and let’s talk.
+          Whether it’s a startup idea, personal brand, or real estate platform —
+          I’m ready. Reach out and let’s talk.
         </motion.p>
 
         <div className="grid gap-6 sm:grid-cols-2 mt-10">
@@ -70,7 +71,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

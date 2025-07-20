@@ -1,13 +1,33 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { Code, Layers, Zap } from 'lucide-react'
+import { motion } from "framer-motion";
+import { Code, Layers, Zap } from "lucide-react";
 
 const skills = {
-  frontend: ['HTML5', 'CSS3', 'JavaScript (ES6+)', 'React', 'Next.js', 'Tailwind CSS'],
-  tools: ['Framer Motion', 'Zustand', 'React Hook Form', 'Zod', 'Firebase', 'React Query'],
-  others: ['Git & GitHub', 'Vercel', 'Clerk/Auth0', 'UploadThing', 'Google Maps API'],
-}
+  frontend: [
+    "HTML5",
+    "CSS3",
+    "JavaScript (ES6+)",
+    "React",
+    "Next.js",
+    "Tailwind CSS",
+  ],
+  tools: [
+    "Framer Motion",
+    "Zustand",
+    "React Hook Form",
+    "Zod",
+    "Firebase",
+    "React Query",
+  ],
+  others: [
+    "Git & GitHub",
+    "Vercel",
+    "Clerk/Auth0",
+    "UploadThing",
+    "Google Maps API",
+  ],
+};
 
 const SkillBlock = ({ title, icon: Icon, items, delay }) => (
   <motion.div
@@ -32,7 +52,7 @@ const SkillBlock = ({ title, icon: Icon, items, delay }) => (
       ))}
     </ul>
   </motion.div>
-)
+);
 
 export default function Skills() {
   return (
@@ -45,7 +65,7 @@ export default function Skills() {
           transition={{ duration: 0.5 }}
           className="text-4xl font-bold tracking-tight text-black text-center"
         >
-          My Toolbox 
+          My Toolbox
         </motion.h2>
 
         <div className="flex flex-col md:flex-row md:justify-between gap-6">
@@ -70,5 +90,5 @@ export default function Skills() {
         </div>
       </div>
     </section>
-  )
+  );
 }

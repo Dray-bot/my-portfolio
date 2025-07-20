@@ -1,18 +1,18 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import Link from 'next/link'
+import { useState } from "react";
+import Link from "next/link";
 
 const navLinks = [
-  { name: 'Projects', href: '#projects' },
-  { name: 'About', href: '#about' },
-  { name: 'Contact', href: '#contact' },
-]
+  { name: "Projects", href: "#projects" },
+  { name: "About", href: "#about" },
+  { name: "Contact", href: "#contact" },
+];
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => setMenuOpen(!menuOpen)
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
     <nav className="sticky top-0 z-50 bg-gradient-to-r from-[#fffceb] to-[#fff9db] shadow-md backdrop-blur-md font-inter">
@@ -96,7 +96,7 @@ const Navbar = () => {
         </div>
       )} */}
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

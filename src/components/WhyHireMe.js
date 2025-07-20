@@ -1,18 +1,18 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { CheckCircle } from 'lucide-react'
+import { motion } from "framer-motion";
+import { CheckCircle } from "lucide-react";
 
 const services = [
-  'Responsive, custom web development',
-  'Pixel-perfect UI with React & Tailwind CSS',
-  'Reusable, performance-optimized components',
-  'Clean, scalable codebase with best practices',
-  'SEO-friendly architecture and structure',
-  'Modern animations using Framer Motion',
-  'Full mobile and cross-browser optimization',
-  'Smooth API integration with real-time features',
-]
+  "Responsive, custom web development",
+  "Pixel-perfect UI with React & Tailwind CSS",
+  "Reusable, performance-optimized components",
+  "Clean, scalable codebase with best practices",
+  "SEO-friendly architecture and structure",
+  "Modern animations using Framer Motion",
+  "Full mobile and cross-browser optimization",
+  "Smooth API integration with real-time features",
+];
 
 export default function WhyHireMe() {
   return (
@@ -35,7 +35,9 @@ export default function WhyHireMe() {
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          I deliver modern, high-performance websites with clean code, optimized UX, and a strong focus on scalability. Every project I work on is crafted for real-world users and business impact.
+          I deliver modern, high-performance websites with clean code, optimized
+          UX, and a strong focus on scalability. Every project I work on is
+          crafted for real-world users and business impact.
         </motion.p>
 
         {/* Services List */}
@@ -55,5 +57,5 @@ export default function WhyHireMe() {
         </div>
       </div>
     </section>
-  )
+  );
 }

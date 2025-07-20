@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import { motion } from 'framer-motion'
-import { jsPDF } from 'jspdf'
+import { motion } from 'framer-motion';
+import { jsPDF } from 'jspdf';
 
 export default function ResumePage() {
   const handleDownload = () => {
-    const doc = new jsPDF()
+    const doc = new jsPDF();
 
     const content = `
 Dray [Ajibola Ayomide]
@@ -14,17 +14,15 @@ samueldray180@gmail.com • +234 816 818 1218
 GitHub: github.com/Dray-bot
 LinkedIn: linkedin.com/in/ayomide-ajibola-4989a2324
 
-
 PROFESSIONAL SUMMARY
 Self-taught and passionate Front-End Developer currently in 200 Level at Lead City University, Ibadan. Known for building sleek, high-performing UI using React, Next.js, and Tailwind CSS. Strong design instincts and experience across industries like real estate, fashion, construction, and publishing. Focused on fast delivery, clean code, and real business impact.
-
 
 TECH STACK
 - React, Next.js, Tailwind CSS, Framer Motion
 - Zustand, React Query, Radix UI, Vite
 - HTML5, CSS3, JavaScript (ES6+)
 - Git, GitHub, Firebase, Figma (basic), Cloudinary
-- Clerk/Auth0, UploadThinng, Google Maps API
+- Clerk/Auth0, UploadThing, Google Maps API
 
 EXPERIENCE
 Freelance Front-End Developer — Remote (2024 – Present)
@@ -32,7 +30,6 @@ Freelance Front-End Developer — Remote (2024 – Present)
 • Currently developing Homy — a real estate platform with verified agent listings, subscription flows, and internal chat.
 • Handles responsive design, animations, and performance tuning with React + Tailwind.
 • Collaborates with designers and backend engineers in a real team workflow.
-
 
 EDUCATION
 Lead City University, Ibadan — BSc. Computer Science
@@ -45,16 +42,15 @@ Self-Taught Developer — 2024 – Present
 • Over 15 full frontend builds completed.
 • Grew expertise in UI logic, motion design, and modern JavaScript tooling.
 
-
 REFERENCES
 Available upon request
-    `
+    `;
 
-    doc.setFont('Courier', 'normal')
-    doc.setFontSize(10)
-    doc.text(content, 10, 10)
-    doc.save('Dray_Resume.pdf')
-  }
+    doc.setFont('Courier', 'normal');
+    doc.setFontSize(10);
+    doc.text(content, 10, 10);
+    doc.save('Dray_Resume.pdf');
+  };
 
   return (
     <main className="min-h-screen px-6 py-16 bg-white text-[#1F2937] font-sans">
@@ -70,7 +66,7 @@ Available upon request
         <section className="mb-12">
           <h2 className="text-2xl font-semibold text-black mb-2">About Me</h2>
           <p className="text-gray-800 leading-relaxed">
-            I’m Dray, a self-taught Nigerian Front-End Developer and a 200 Level Computer Science student at Lead City University, Ibadan. I started out at a tech school that closed after 3 months, but that didn’t stop me. I taught myself how to build and deploy real-world apps, and now I work with teams to create fast, beautiful products using React and Tailwind. I'm currently building a real estate platform called <strong>Homy</strong> built for scale and real users.
+            I'm Dray, a self-taught Nigerian Front-End Developer and a 200 Level Computer Science student at Lead City University, Ibadan. I started out at a tech school that closed after 3 months, but that didn&apos;t stop me. I taught myself how to build and deploy real-world apps, and now I work with teams to create fast, beautiful products using React and Tailwind. I'm currently building a real estate platform called <strong>Homy</strong>, built for scale and real users.
           </p>
         </section>
 
@@ -98,8 +94,8 @@ Available upon request
               <p className="text-sm text-gray-600">Remote · 2024 – Present</p>
               <p>
                 Developed and shipped production apps like <strong>BuildWise</strong> (construction),
-                <strong> Bookium</strong> (books), and <strong>Le Tailore</strong> (fashion brand). I’m now leading the frontend on
-                <strong> Homy</strong> a real estate app for verified agents with chat, subscriptions, and performance-first UI. I handle animation, responsiveness, and all things frontend.
+                <strong> Bookium</strong> (books), and <strong>Le Tailore</strong> (fashion brand). I'm now leading the frontend on
+                <strong> Homy</strong> — a real estate app for verified agents with chat, subscriptions, and performance-first UI. I handle animation, responsiveness, and all things frontend.
               </p>
             </div>
           </div>
@@ -115,7 +111,9 @@ Available upon request
           <div className="mb-4">
             <p className="font-semibold">Tech School (Discontinued)</p>
             <p className="text-sm text-gray-600">2024</p>
-            <p className="text-gray-800">Spent 3 months at a Tech School before it shut down. Took the initiative to continue learning independently.</p>
+            <p className="text-gray-800">
+              Spent 3 months at a tech school before it shut down. Took the initiative to continue learning independently.
+            </p>
           </div>
           <div>
             <p className="font-semibold">Self-Taught Developer</p>
@@ -137,5 +135,5 @@ Available upon request
         </section>
       </motion.div>
     </main>
-  )
+  );
 }

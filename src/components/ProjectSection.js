@@ -1,35 +1,35 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { ExternalLink } from 'lucide-react'
-import { title } from 'process'
+import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
+import { title } from "process";
 
 const projects = [
   {
-    title: 'BuildWise',
+    title: "BuildWise",
     description:
-      'A modern construction company platform designed to showcase services, completed projects, and client testimonials with a clean, responsive UI.',
-    link: 'https://build-wise-25a9.vercel.app/',
+      "A modern construction company platform designed to showcase services, completed projects, and client testimonials with a clean, responsive UI.",
+    link: "https://build-wise-25a9.vercel.app/",
   },
   {
-    title: 'Bookium',
+    title: "Bookium",
     description:
-      'A sleek, category-based book showcase platform featuring dynamic pages, featured reads, and an intuitive user experience.',
-    link: 'https://bookium-leyq.vercel.app/',
+      "A sleek, category-based book showcase platform featuring dynamic pages, featured reads, and an intuitive user experience.",
+    link: "https://bookium-leyq.vercel.app/",
   },
   {
-    title: 'Le Tailore',
+    title: "Le Tailore",
     description:
-      'A bespoke fashion portfolio site tailored for a female designer, with elegant visuals, booking capabilities, and a modern brand identity.',
-    link: 'https://le-tailore.vercel.app/',
+      "A bespoke fashion portfolio site tailored for a female designer, with elegant visuals, booking capabilities, and a modern brand identity.",
+    link: "https://le-tailore.vercel.app/",
   },
   {
-    title: 'Ola Watch Store',
+    title: "Ola Watch Store",
     description:
-      'An elegant online store for luxury watches, featuring a sleek design, user-friendly navigation, and secure payment options.',
-    link: 'https://ray-watch-store.vercel.app/',
-  }
-]
+      "An elegant online store for luxury watches, featuring a sleek design, user-friendly navigation, and secure payment options.",
+    link: "https://ray-watch-store.vercel.app/",
+  },
+];
 
 export default function ProjectSection() {
   return (
@@ -55,7 +55,9 @@ export default function ProjectSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
             >
-              <h3 className="text-xl font-semibold text-[#1F2937] mb-2">{project.title}</h3>
+              <h3 className="text-xl font-semibold text-[#1F2937] mb-2">
+                {project.title}
+              </h3>
               <p className="text-gray-600 text-sm leading-relaxed mb-4">
                 {project.description}
               </p>
@@ -73,5 +75,5 @@ export default function ProjectSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

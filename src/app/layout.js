@@ -1,10 +1,10 @@
-import './globals.css'
-import Navbar from '@/components/Navbar'
+import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: "Dray's Portfolio",
-  description: 'Frontend Dev. Dreamer. Builder.',
-}
+  description: "Frontend Dev. Dreamer. Builder.",
+};
 
 export default function RootLayout({ children }) {
   return (
@@ -14,5 +14,5 @@ export default function RootLayout({ children }) {
         <main className="min-h-screen">{children}</main>
       </body>
     </html>
-  )
+  );
 }
