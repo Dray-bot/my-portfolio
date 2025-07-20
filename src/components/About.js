@@ -20,26 +20,27 @@ const About = () => {
 
           <p className="text-lg leading-relaxed text-gray-700">
             I’m <strong>Ajibola Ayomide</strong>, but everyone calls me{" "}
-            <strong>Dray</strong>. I'm a self-taught Frontend Developer and
+            <strong>Dray</strong>. I'm a self-taught Frontend Developer and a
             full-time Computer Science student at{" "}
             <strong>Lead City University, Ibadan</strong> (Class of 2028).
           </p>
 
           <p className="text-lg leading-relaxed text-gray-700">
             My dev journey started in a tech school that shut down after 3
-            months. Most would’ve stopped I didn’t. I locked in, taught myself
-            from scratch, and started building projects with real-world impact.
-            I design interfaces that are clean, responsive, and user-focused.
+            months. Most would’ve stopped — I didn’t. I locked in, taught
+            myself from scratch, and started building projects with real-world
+            impact. I design interfaces that are clean, responsive, and
+            user-focused.
           </p>
 
           <p className="text-lg leading-relaxed text-gray-700">
             Some of my recent work includes:
-            <br />• <strong>BuildWise</strong> – construction services platform{" "}
+            <br />• <strong>BuildWise</strong> – construction services platform
             <br />• <strong>Le Tailore</strong> – fashion portfolio for fashion
             designers <br />• <strong>Bookium</strong> – book listing & preview
             web app <br />• <strong>Homy</strong> – a full-blown real estate
-            platform with subscription and agent verification features
-            (currently in progress).
+            platform with subscription and agent verification features (in
+            progress)
           </p>
 
           <p className="text-lg leading-relaxed text-gray-700">
@@ -47,7 +48,7 @@ const About = () => {
             <strong>Tailwind CSS</strong>, <strong>Zustand</strong>,{" "}
             <strong>Framer Motion</strong>, <strong>Radix UI</strong>, and more
             to bring ideas to life. Whether it’s a landing page, web app, or
-            dashboard I build for clarity, speed, and mobile-first
+            dashboard — I build for clarity, speed, and mobile-first
             experiences.
           </p>
 
@@ -69,11 +70,11 @@ const About = () => {
           className="w-full h-full border-l-4 border-[#facc15] pl-6"
         >
           <p className="text-2xl text-[#1f2937] font-semibold mb-4 italic">
-            "I don't come from a perfect start, but I show up every day to build
-            like I've already made it."
+            &quot;I don&apos;t come from a perfect start, but I show up every day to
+            build like I&apos;ve already made it.&quot;
           </p>
           <p className="text-md text-gray-600 mb-6">
-            Resilient. Self-taught. Vision-driven. That's who I am and that's
+            Resilient. Self-taught. Vision-driven. That&apos;s who I am and that&apos;s
             the energy I bring into every single line of code.
           </p>
 

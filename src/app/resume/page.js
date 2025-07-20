@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import { jsPDF } from 'jspdf';
+import { motion } from "framer-motion";
+import { jsPDF } from "jspdf";
 
 export default function ResumePage() {
   const handleDownload = () => {
@@ -44,12 +44,12 @@ Self-Taught Developer — 2024 – Present
 
 REFERENCES
 Available upon request
-    `;
+`;
 
-    doc.setFont('Courier', 'normal');
+    doc.setFont("Courier", "normal");
     doc.setFontSize(10);
     doc.text(content, 10, 10);
-    doc.save('Dray_Resume.pdf');
+    doc.save("Dray_Resume.pdf");
   };
 
   return (
@@ -66,7 +66,7 @@ Available upon request
         <section className="mb-12">
           <h2 className="text-2xl font-semibold text-black mb-2">About Me</h2>
           <p className="text-gray-800 leading-relaxed">
-            I'm Dray, a self-taught Nigerian Front-End Developer and a 200 Level Computer Science student at Lead City University, Ibadan. I started out at a tech school that closed after 3 months, but that didn&apos;t stop me. I taught myself how to build and deploy real-world apps, and now I work with teams to create fast, beautiful products using React and Tailwind. I'm currently building a real estate platform called <strong>Homy</strong>, built for scale and real users.
+            I&apos;m Dray, a self-taught Nigerian Front-End Developer and a 200 Level Computer Science student at Lead City University, Ibadan. I started out at a tech school that closed after 3 months, but that didn&apos;t stop me. I taught myself how to build and deploy real-world apps, and now I work with teams to create fast, beautiful products using React and Tailwind. I&apos;m currently building a real estate platform called <strong>Homy</strong>, built for scale and real users.
           </p>
         </section>
 
@@ -94,7 +94,7 @@ Available upon request
               <p className="text-sm text-gray-600">Remote · 2024 – Present</p>
               <p>
                 Developed and shipped production apps like <strong>BuildWise</strong> (construction),
-                <strong> Bookium</strong> (books), and <strong>Le Tailore</strong> (fashion brand). I'm now leading the frontend on
+                <strong> Bookium</strong> (books), and <strong>Le Tailore</strong> (fashion brand). I&apos;m now leading the frontend on
                 <strong> Homy</strong> — a real estate app for verified agents with chat, subscriptions, and performance-first UI. I handle animation, responsiveness, and all things frontend.
               </p>
             </div>
