@@ -19,15 +19,15 @@ const About = () => {
           <h2 className="text-4xl font-bold text-black">About Me</h2>
 
           <p className="text-lg leading-relaxed text-gray-700">
-            I’m <strong>Ajibola Ayomide</strong>, but everyone calls me{" "}
-            <strong>Dray</strong>. I'm a self-taught Frontend Developer and a
+            I&apos;m <strong>Ajibola Ayomide</strong>, but everyone calls me{" "}
+            <strong>Dray</strong>. I&apos;m a self-taught Frontend Developer and a
             full-time Computer Science student at{" "}
             <strong>Lead City University, Ibadan</strong> (Class of 2028).
           </p>
 
           <p className="text-lg leading-relaxed text-gray-700">
             My dev journey started in a tech school that shut down after 3
-            months. Most would’ve stopped — I didn’t. I locked in, taught
+            months. Most would&apos;ve stopped — I didn&apos;t. I locked in, taught
             myself from scratch, and started building projects with real-world
             impact. I design interfaces that are clean, responsive, and
             user-focused.
@@ -37,7 +37,7 @@ const About = () => {
             Some of my recent work includes:
             <br />• <strong>BuildWise</strong> – construction services platform
             <br />• <strong>Le Tailore</strong> – fashion portfolio for fashion
-            designers <br />• <strong>Bookium</strong> – book listing & preview
+            designers <br />• <strong>Bookium</strong> – book listing &amp; preview
             web app <br />• <strong>Homy</strong> – a full-blown real estate
             platform with subscription and agent verification features (in
             progress)
@@ -47,17 +47,17 @@ const About = () => {
             I use stacks like <strong>React.js</strong>,{" "}
             <strong>Tailwind CSS</strong>, <strong>Zustand</strong>,{" "}
             <strong>Framer Motion</strong>, <strong>Radix UI</strong>, and more
-            to bring ideas to life. Whether it’s a landing page, web app, or
+            to bring ideas to life. Whether it&apos;s a landing page, web app, or
             dashboard — I build for clarity, speed, and mobile-first
             experiences.
           </p>
 
           <p className="text-lg leading-relaxed text-gray-700">
-            I’m open to{" "}
+            I&apos;m open to{" "}
             <strong>
               internships, freelance projects, and remote frontend roles
             </strong>
-            . Let’s collab and ship something dope — clean UI, optimized UX, and
+            . Let&apos;s collab and ship something dope — clean UI, optimized UX, and
             real results.
           </p>
         </motion.div>
@@ -81,7 +81,7 @@ const About = () => {
           <div className="mt-6">
             <p className="text-sm text-black">What I Work With:</p>
             <ul className="list-disc list-inside text-black mt-2 space-y-1">
-              <li>React.js & Next.js</li>
+              <li>React.js &amp; Next.js</li>
               <li>Tailwind CSS, Radix UI, Framer Motion</li>
               <li>Zustand, React Query, React Hook Form + Zod</li>
               <li>Firebase, Clerk/Auth0, Socket.io</li>
