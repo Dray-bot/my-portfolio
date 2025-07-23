@@ -1,93 +1,111 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Code, Layers, Zap } from "lucide-react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import Typewriter from "typewriter-effect";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJsSquare,
+  FaReact,
+  FaGitAlt,
+  FaGithub,
+  FaPaw,
+} from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiVite,
+  SiFirebase,
+  SiTailwindcss,
+  SiFramer,
+  SiRadixui,
+} from "react-icons/si";
+import { LiaFingerprintSolid } from "react-icons/lia";
+import { useEffect } from "react";
 
-const skills = {
-  frontend: [
-    "HTML5",
-    "CSS3",
-    "JavaScript (ES6+)",
-    "React",
-    "Next.js",
-    "Tailwind CSS",
-  ],
-  tools: [
-    "Framer Motion",
-    "Zustand",
-    "React Hook Form",
-    "Zod",
-    "Firebase",
-    "React Query",
-  ],
-  others: [
-    "Git & GitHub",
-    "Vercel",
-    "Clerk/Auth0",
-    "UploadThing",
-    "Google Maps API",
-  ],
-};
-
-const SkillBlock = ({ title, icon: Icon, items, delay }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay, duration: 0.5 }}
-    className="w-full md:w-1/3 bg-white border border-yellow-200 rounded-2xl shadow-lg p-6"
-  >
-    <div className="flex items-center gap-3 mb-4 text-yellow-600">
-      <Icon size={22} aria-hidden="true" />
-      <h3 className="text-xl font-semibold tracking-tight">{title}</h3>
-    </div>
-    <ul className="space-y-2 text-gray-700 list-none relative">
-      {items.map((skill, index) => (
-        <li
-          key={index}
-          className="pl-4 relative before:absolute before:left-0 before:top-2/4 before:-translate-y-2/4 before:w-2 before:h-2 before:rounded-full before:bg-yellow-500"
-        >
-          {skill}
-        </li>
-      ))}
-    </ul>
-  </motion.div>
-);
+const skills = [
+  { name: "HTML5", icon: <FaHtml5 size={48} className="text-orange-600" /> },
+  { name: "CSS3", icon: <FaCss3Alt size={48} className="text-blue-600" /> },
+  { name: "JavaScript", icon: <FaJsSquare size={48} className="text-yellow-500" /> },
+  { name: "React", icon: <FaReact size={48} className="text-cyan-500" /> },
+  { name: "Vite React", icon: <SiVite size={48} className="text-purple-500" /> },
+  { name: "Next.js", icon: <SiNextdotjs size={48} /> },
+  { name: "Radix UI", icon: <SiRadixui size={48} className="text-black" /> },
+  { name: "Framer Motion", icon: <SiFramer size={48} className="text-pink-500" /> },
+  { name: "Tailwind CSS", icon: <SiTailwindcss size={48} className="text-blue-400" /> },
+  { name: "Zustand", icon: <FaPaw size={48} className="text-orange-400" /> },
+  { name: "Git", icon: <FaGitAlt size={48} className="text-red-500" /> },
+  { name: "GitHub", icon: <FaGithub size={48} className="text-gray-800" /> },
+  { name: "Firebase", icon: <SiFirebase size={48} className="text-yellow-400" /> },
+  { name: "Clerk Auth", icon: <LiaFingerprintSolid size={48} className="text-emerald-600" /> },
+];
 
 export default function Skills() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    threshold: 0.2,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden"); // replay the animation on scroll
+    }
+  }, [controls, inView]);
+
   return (
-    <section id="skills" className="bg-[#fffbea] py-20 px-4 text-gray-900">
-      <div className="max-w-6xl mx-auto flex flex-col gap-12">
+    <section id="skills" className="w-full py-24 px-6 bg-grey-900 font-outfit">
+      <div className="max-w-6xl mx-auto text-center">
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-4xl font-bold tracking-tight text-black text-center"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-[45px] font-bold text-white mb-8"
         >
-          My Toolbox
+          My <span className="text-emerald-600">Skills</span>
         </motion.h2>
 
-        <div className="flex flex-col md:flex-row md:justify-between gap-6">
-          <SkillBlock
-            title="Frontend Development"
-            icon={Code}
-            items={skills.frontend}
-            delay={0.2}
-          />
-          <SkillBlock
-            title="Libraries & Tools"
-            icon={Layers}
-            items={skills.tools}
-            delay={0.4}
-          />
-          <SkillBlock
-            title="Others & Integrations"
-            icon={Zap}
-            items={skills.others}
-            delay={0.6}
+        <div className="text-[15px] font-light text-gray-400 h-6">
+          <Typewriter
+            options={{
+              strings: ["My Tech Stack...", "My Expertise..."],
+              autoStart: true,
+              loop: true,
+              delay: 75,
+              deleteSpeed: 30,
+            }}
           />
         </div>
+
+        <motion.div
+          ref={ref}
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 mt-10"
+          initial="hidden"
+          animate={controls}
+          variants={{
+            visible: {
+              transition: { staggerChildren: 0.1 },
+            },
+            hidden: {},
+          }}
+        >
+          {skills.map((skill) => (
+            <motion.div
+              key={skill.name}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              className="flex flex-col items-center justify-center gap-3 p-4 hover:bg-emerald-50 transition rounded-xl"
+            >
+              <div className="hover:scale-110 transition duration-300">
+                {skill.icon}
+              </div>
+              <p className="text-sm font-medium text-gray-700">{skill.name}</p>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

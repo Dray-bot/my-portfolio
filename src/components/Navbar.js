@@ -1,102 +1,83 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import Link from "next/link";
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import {
+  Home,
+  User,
+  Folder,
+  Mail,
+  LayoutGrid,
+  X,
+} from 'lucide-react'
 
 const navLinks = [
-  { name: "Projects", href: "#projects" },
-  { name: "About", href: "#about" },
-  { name: "Contact", href: "#contact" },
-];
+  { name: 'Home' },
+  { name: 'About' },
+  { name: 'Projects' },
+  { name: 'Contact' },
+]
 
-const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const toggleMenu = () => setMenuOpen(!menuOpen);
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <nav className="sticky top-0 z-50 bg-gradient-to-r from-[#fffceb] to-[#fff9db] shadow-md backdrop-blur-md font-inter">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link
-          href="/"
-          className="text-3xl font-bold tracking-wide text-black hover:scale-105 transition-transform duration-200"
-        >
-          Dray
-        </Link>
-
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8 text-[16px] font-medium">
-          {navLinks.map(({ name, href }) => (
-            <Link
+    <>
+      {/* Desktop Navbar */}
+      <nav className="hidden md:flex fixed top-0 left-0 w-full z-50 bg-black px-6 lg:px-12 py-3 justify-between items-center shadow-xl">
+        <h1 className="text-emerald-600 font-bold text-xl select-none">DRAY</h1>
+        <div className="flex gap-8">
+          {navLinks.map(({ name, icon }) => (
+            <a
               key={name}
-              href={href}
-              className="text-gray-700 hover:text-yellow-600 transition-colors duration-200 relative group"
+              href={`#${name.toLowerCase()}`}
+              className="flex items-center gap-2 text-white text-sm font-medium hover:text-emerald-500 transition select-none"
             >
-              {name}
-              <span className="block h-[2px] w-0 bg-yellow-500 group-hover:w-full transition-all duration-300"></span>
-            </Link>
+              {icon}
+              <span>{name}</span>
+            </a>
           ))}
-
-          <Link
-            href="/resume"
-            className="bg-yellow-500 hover:bg-yellow-400 text-white font-semibold px-5 py-2 rounded-xl shadow-md transition-transform duration-200 hover:scale-105"
-          >
-            Resume
-          </Link>
         </div>
+      </nav>
 
-        {/* Resume for Mobile */}
-        <div className="md:hidden flex items-center gap-3">
-          <Link
-            href="/resume"
-            className="bg-yellow-500 hover:bg-yellow-400 text-white font-semibold px-4 py-[6px] rounded-xl shadow-md transition-transform duration-200 hover:scale-105"
-          >
-            Resume
-          </Link>
-
-          {/* Toggle */}
-          {/* <button
-            onClick={toggleMenu}
-            className="flex flex-col justify-between w-7 h-6 focus:outline-none z-[60]"
-            aria-label="Toggle Menu"
-          >
-            <span
-              className={`h-[3px] w-full rounded bg-yellow-600 transition-all duration-300 ${
-                menuOpen ? 'rotate-45 translate-y-2' : ''
-              }`}
-            />
-            <span
-              className={`h-[3px] w-full rounded bg-yellow-600 transition-all duration-300 ${
-                menuOpen ? 'opacity-0' : ''
-              }`}
-            />
-            <span
-              className={`h-[3px] w-full rounded bg-yellow-600 transition-all duration-300 ${
-                menuOpen ? '-rotate-45 -translate-y-2' : ''
-              }`}
-            />
-          </button> */}
-        </div>
+      {/* Mobile Bottom Navbar */}
+      <div className="fixed bottom-0 left-0 w-full z-50 bg-black px-4 sm:px-6 py-3 md:hidden flex justify-between items-center border-t border-gray-800">
+        <h1 className="text-white font-bold text-lg select-none">DRAY</h1>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? 'Close menu' : 'Open menu'}
+          className="text-white bg-white/10 p-2 rounded-xl hover:bg-white/20 transition focus:outline-none focus:ring-2 focus:ring-emerald-500"
+        >
+          {isOpen ? <X size={24} /> : <LayoutGrid size={24} />}
+        </button>
       </div>
 
-      {/* Mobile Menu */}
-      {/* {menuOpen && (
-        <div className="md:hidden bg-[#fffdeb] px-6 py-6 space-y-5 text-[17px] font-medium flex flex-col items-start shadow-md transition-all duration-300 ease-in-out">
-          {navLinks.map(({ name, href }) => (
-            <Link
-              key={name}
-              href={href}
-              className="text-gray-800 hover:text-yellow-600 w-full"
-              onClick={() => setMenuOpen(false)}
-            >
-              {name}
-            </Link>
-          ))}
-        </div>
-      )} */}
-    </nav>
-  );
-};
-
-export default Navbar;
+      {/* Mobile Bottom Drawer */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ y: '100%' }}
+            animate={{ y: 0 }}
+            exit={{ y: '100%' }}
+            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+            className="fixed bottom-[3.5rem] left-0 w-full max-h-[calc(100vh-3.5rem)] bg-[#111] text-white rounded-t-2xl z-[999] md:hidden px-4 sm:px-6 pt-6 pb-4 flex flex-col justify-start overflow-auto"
+          >
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
+              {navLinks.map(({ name, icon }) => (
+                <a
+                  key={name}
+                  href={`#${name.toLowerCase()}`}
+                  className="flex flex-col items-center justify-center gap-1 bg-white/10 hover:bg-white/20 p-3 rounded-xl transition select-none text-sm font-medium"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {icon}
+                  <span>{name}</span>
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  )
+}

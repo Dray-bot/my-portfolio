@@ -2,7 +2,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 
 export const metadata = {
-  title: "Dray's Portfolio",
+  title: "Ajibola Ayomide | Frontend Developer",
   description: "Frontend Dev. Dreamer. Builder.",
 };
 

@@ -1,79 +1,146 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
-import { ExternalLink } from "lucide-react";
-import { title } from "process";
+import { motion } from 'framer-motion'
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
 
 const projects = [
   {
-    title: "BuildWise",
+    title: 'Bookium',
     description:
-      "A modern construction company platform designed to showcase services, completed projects, and client testimonials with a clean, responsive UI.",
-    link: "https://build-wise-25a9.vercel.app/",
+      'Bookium is a sophisticated online platform designed to showcase a diverse collection of books with an intuitive user interface. Built with Next.js and Tailwind CSS, it features smooth animations powered by Framer Motion, providing a seamless browsing experience across all devices. The project emphasizes responsive design, accessibility, and engaging transitions to keep users immersed while exploring the catalog.',
+    image: '/img/bookium.png',
+    tech: ['Next.js', 'Tailwind', 'Framer Motion'],
+    live: 'https://bookium-leyq.vercel.app/',
+    code: 'https://github.com/Dray-bot/bookium',
   },
   {
-    title: "Bookium",
+    title: 'BuildWise',
     description:
-      "A sleek, category-based book showcase platform featuring dynamic pages, featured reads, and an intuitive user experience.",
-    link: "https://bookium-leyq.vercel.app/",
+      'BuildWise is a sleek and modern landing page tailored for construction businesses, showcasing client testimonials and service highlights. It leverages Next.js with Tailwind CSS for a clean and professional look, while Swiper.js integrates smooth, touch-friendly sliders that enhance user engagement. The site focuses on clarity, ease of navigation, and visual appeal to build trust and convert visitors into clients.',
+    image: '/img/buildwise.png',
+    tech: ['Next.js', 'Tailwind', 'Swiper.js'],
+    live: 'https://build-wise-25a9.vercel.app/',
+    code: 'https://github.com/Dray-bot/build-wise',
   },
   {
-    title: "Le Tailore",
+    title: 'Le Tailore',
     description:
-      "A bespoke fashion portfolio site tailored for a female designer, with elegant visuals, booking capabilities, and a modern brand identity.",
-    link: "https://le-tailore.vercel.app/",
+      'Le Tailore is a contemporary e-commerce platform for bespoke clothing, crafted to deliver an elegant shopping experience. With Next.js and Tailwind CSS, the site combines smooth animations and a minimalist design to highlight products and streamline user interactions. Framer Motion enriches the interface with subtle motion, enhancing the overall feel while maintaining high performance and responsiveness.',
+    image: '/img/Le Tailore.png',
+    tech: ['Next.js', 'Tailwind', 'Framer Motion'],
+    live: 'https://le-tailore-wyql.vercel.app/',
+    code: 'https://github.com/Dray-bot/le-tailore',
   },
   {
-    title: "Ola Watch Store",
+    title: 'Ola Watch Store',
     description:
-      "An elegant online store for luxury watches, featuring a sleek design, user-friendly navigation, and secure payment options.",
-    link: "https://ray-watch-store.vercel.app/",
+      'Ola Watch Store is an elegant online retail platform for smartwatches, focused on delivering a premium user experience. Built with React and styled using Tailwind CSS, the store features refined layouts and smooth Framer Motion animations to captivate visitors. It prioritizes responsive design and easy navigation to maximize engagement and sales conversions across all devices.',
+    image: '/img/ola.png',
+    tech: ['React', 'Tailwind', 'Framer Motion'],
+    live: 'https://ray-watch-store.vercel.app/',
+    code: 'https://github.com/Dray-bot/ray-watch-store',
   },
-];
+]
 
-export default function ProjectSection() {
+const fadeIn = (direction = 'up', delay = 0) => {
+  return {
+    initial: {
+      opacity: 0,
+      x: direction === 'left' ? -50 : direction === 'right' ? 50 : 0,
+      y: direction === 'up' ? 50 : direction === 'down' ? -50 : 0,
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        delay,
+        ease: 'easeOut',
+      },
+    },
+    exit: {
+      opacity: 0,
+      x: direction === 'left' ? -50 : direction === 'right' ? 50 : 0,
+      y: direction === 'up' ? 50 : direction === 'down' ? -50 : 0,
+      transition: { duration: 0.4, ease: 'easeIn' },
+    },
+  }
+}
+
+export default function Projects() {
   return (
-    <section id="projects" className="bg-[#F8FAFC] py-24 px-6 font-outfit">
-      <div className="max-w-6xl mx-auto">
-        {/* Heading */}
-        <motion.h2
-          className="text-4xl font-bold text-center text-gray-900 mb-14"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          Selected Projects
-        </motion.h2>
+    <section id="projects" className="py-24 bg-grey-900 text-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-[45px] font-bold mb-16 text-center">
+          My <span className="text-emerald-500">Projects</span>
+        </h2>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="space-y-20 md:space-y-24">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300"
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              className={`flex flex-col md:flex-row ${
+                index % 2 === 1 ? 'md:flex-row-reverse' : ''
+              } items-center gap-8 md:gap-10`}
+              variants={fadeIn(index % 2 === 0 ? 'left' : 'right', index * 0.2)}
+              initial="initial"
+              whileInView="animate"
+              exit="exit"
+              viewport={{ once: false, amount: 0.3 }}
             >
-              <h3 className="text-xl font-semibold text-[#1F2937] mb-2">
-                {project.title}
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                {project.description}
-              </p>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-[#CA8A04] font-medium text-sm hover:underline transition-all"
-              >
-                View Project
-                <ExternalLink size={16} />
-              </a>
+              {/* Image */}
+              <div className="md:w-1/2 overflow-hidden rounded-lg shadow-lg group max-w-full">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-64 md:h-72 object-cover"
+                  loading="lazy"
+                />
+              </div>
+
+              {/* Text content */}
+              <div className="md:w-1/2 max-w-full">
+                <h3 className="text-2xl font-semibold mb-4">{project.title}</h3>
+                <p className="text-gray-300 mb-4">
+                  {project.description.replace(/'/g, "&apos;")}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tech.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="bg-emerald-600/10 text-emerald-400 px-3 py-1 rounded-md text-sm whitespace-nowrap"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex flex-wrap items-center gap-4">
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-md text-sm font-medium transition"
+                  >
+                    View Live <FaExternalLinkAlt className="text-xs" />
+                  </a>
+
+                  <a
+                    href={project.code}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-gray-300 hover:underline text-sm"
+                  >
+                    Code <FaGithub className="text-base" />
+                  </a>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  );
+  )
 }
