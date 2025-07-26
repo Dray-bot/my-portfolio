@@ -22,7 +22,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <section className="relative min-h-screen bg-grey-900 text-gray-600 flex flex-col justify-center max-w-screen box-border px-4 sm:px-6 md:px-12 lg:px-20 overflow-hidden">
+    <section className="relative min-h-screen bg-white dark:bg-[#0f172a00] text-gray-800 dark:text-gray-300 flex flex-col justify-center max-w-screen box-border px-4 sm:px-6 md:px-12 lg:px-20 overflow-hidden">
       {/* MOBILE IMAGE + SOCIAL ICONS */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -68,9 +68,9 @@ const Hero = () => {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
-          className="text-left w-full md:w-1/2 text-white space-y-4 sm:space-y-5"
+          className="text-left w-full md:w-1/2 space-y-4 sm:space-y-5"
         >
-          <div className="text-base sm:text-lg text-white">
+          <div className="text-base sm:text-lg text-gray-700 dark:text-white">
             {mounted ? (
               <Typewriter
                 words={['Hello there 👋', 'Welcome', 'I am...']}
@@ -90,13 +90,13 @@ const Hero = () => {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 1 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight break-words"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight break-words text-gray-900 dark:text-white"
           >
             AJIBOLA <br /> AYOMIDE,{' '}
             <span className="text-emerald-500 text-3xl sm:text-4xl md:text-[2rem]">a</span>
           </motion.h1>
 
-          <div className="text-lg sm:text-xl md:text-2xl text-emerald-400 break-words">
+          <div className="text-lg sm:text-xl md:text-2xl text-emerald-500 break-words">
             {mounted ? (
               <Typewriter
                 words={['Frontend Developer', 'UI/UX Enthusiast', 'Tech Explorer']}
@@ -117,7 +117,7 @@ const Hero = () => {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="inline-block px-4 py-2 border text-white text-sm font-semibold border-emerald-500 hover:bg-gray-700 hover:cursor-pointer hover:border-0 transition rounded cursor-pointer"
+                className="inline-block px-4 py-2 border text-gray-900 dark:text-white text-sm font-semibold border-emerald-500 hover:bg-gray-700 hover:border-0 hover:text-white transition rounded cursor-pointer"
               >
                 See My Latest Works
               </motion.div>
@@ -129,7 +129,7 @@ const Hero = () => {
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-4 py-2 text-sm font-semibold bg-white text-black hover:bg-gray-800 hover:text-white transition rounded cursor-pointer"
+              className="px-4 py-2 text-sm font-semibold bg-black dark:bg-white dark:text-black text-white hover:bg-gray-800 transition rounded cursor-pointer"
             >
               Download CV
             </motion.a>
@@ -184,7 +184,7 @@ const Hero = () => {
           ease: 'linear',
         }}
       >
-        <h1 className="text-[90px] sm:text-[110px] md:text-[140px] lg:text-[180px] font-bold text-white/20 whitespace-nowrap tracking-tight">
+        <h1 className="text-[150px] sm:text-[110px] md:text-[140px] lg:text-[180px] font-bold text-gray-200 dark:text-white/10 whitespace-nowrap tracking-tight">
           Ajibola Ayomide Samuel
         </h1>
       </motion.div>

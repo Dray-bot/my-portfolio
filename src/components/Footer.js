@@ -46,8 +46,8 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col gap-10 sm:flex-row sm:justify-between sm:items-start">
         {/* Branding */}
         <motion.div variants={itemVariants}>
-          <h3 className="text-2xl font-bold text-white mb-2">Dray</h3>
-          <p className="text-sm text-gray-300 max-w-sm leading-relaxed">
+          <h3 className="text-2xl font-bold text-black dark:text-white mb-2">Dray</h3>
+          <p className="text-sm text-black dark:text-white max-w-sm leading-relaxed">
             Frontend Developer crafting clean, scalable, and impactful web
             experiences. Let&apos;s build something legendary.
           </p>
@@ -55,7 +55,7 @@ const Footer = () => {
 
         {/* Social Links */}
         <motion.div className="flex flex-col gap-4" variants={itemVariants}>
-          <h4 className="text-base font-semibold text-gray-300">Connect with me</h4>
+          <h4 className="text-base font-semibold text-black dark:text-white">Connect with me</h4>
           <div className="flex items-center gap-5">
             {socialLinks.map(({ Icon, href, label }) => (
               <motion.a
@@ -64,7 +64,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noreferrer"
                 aria-label={label}
-                className="text-white hover:text-emerald-500 transition"
+                className="text-black dark:text-white hover:text-emerald-500 transition"
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -76,10 +76,10 @@ const Footer = () => {
 
         {/* Back to Top */}
         <motion.div className="flex flex-col gap-4" variants={itemVariants}>
-          <h4 className="text-base font-semibold text-gray-300">Navigate</h4>
+          <h4 className="text-base font-semibold text-black dark:text-white">Navigate</h4>
           <motion.button
             onClick={scrollToTop}
-            className="flex items-center gap-2 text-sm text-gray-300 hover:text-emerald-500 transition"
+            className="flex items-center gap-2 text-sm text-black dark:text-white hover:text-emerald-500 transition"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Back to top"
@@ -92,10 +92,10 @@ const Footer = () => {
 
       {/* Bottom line */}
       <motion.div
-        className="border-t border-[#E5E7EB] text-center text-xs text-white py-5 select-none"
+        className="border-t border-[#E5E7EB] text-center text-xs text-black dark:text-white py-5 select-none"
         variants={itemVariants}
       >
-        &copy; {currentYear} <span className="font-semibold text-white">Dray</span>. All rights reserved.
+        &copy; {currentYear} <span className="font-semibold text-black dark:text-white">Dray</span>. All rights reserved.
       </motion.div>
     </motion.footer>
   );

@@ -82,9 +82,9 @@ export default function About() {
             variants={textVariants}
             initial="hidden"
             animate={controls}
-            className="text-[45px] font-extrabold text-white"
+            className="text-[45px] font-extrabold dark:text-white text-black"
           >
-            About <span className="text-emerald-600">Me</span>
+            About <span className="text-emerald-500">Me</span>
           </motion.h2>
 
           <motion.div
@@ -140,7 +140,7 @@ export default function About() {
             variants={textVariants}
             initial="hidden"
             animate={controls}
-            className="italic text-xl text-white pt-4 border-t border-emerald-900 mt-10"
+            className="italic text-xl text-black dark:text-white pt-4 border-t border-emerald-900 mt-10"
           >
             “The intention is nothing but Greatness”
           </motion.blockquote>

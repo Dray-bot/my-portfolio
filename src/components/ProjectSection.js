@@ -72,7 +72,7 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 bg-grey-900 text-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-[45px] font-bold mb-16 text-center">
+        <h2 className="text-[45px] text-black dark:text-white font-bold mb-16 text-center">
           My <span className="text-emerald-500">Projects</span>
         </h2>
 
@@ -102,7 +102,7 @@ export default function Projects() {
               {/* Text content */}
               <div className="md:w-1/2 max-w-full">
                 <h3 className="text-2xl font-semibold mb-4">{project.title}</h3>
-                <p className="text-gray-300 mb-4">
+                <p className="text-gray-500 dark:text-gray-300 mb-4">
                   {project.description.replace(/'/g, "&apos;")}
                 </p>
 
@@ -131,7 +131,7 @@ export default function Projects() {
                     href={project.code}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-gray-300 hover:underline text-sm"
+                    className="inline-flex items-center gap-2 text-black dark:text-gray-300  hover:underline text-sm"
                   >
                     Code <FaGithub className="text-base" />
                   </a>

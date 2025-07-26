@@ -37,7 +37,7 @@ const Contact = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="text-4xl md:text-5xl font-bold text-white"
+          className="text-4xl md:text-5xl font-bold text-black dark:text-white"
         >
           Let&apos;s Build Something Great
         </motion.h2>
@@ -46,7 +46,7 @@ const Contact = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-lg md:text-xl text-gray-300"
+          className="text-lg md:text-xl text-black dark:text-white"
         >
           Whether it&apos;s a startup idea, personal brand, or real estate platform — I&apos;m ready. Reach out and let&apos;s talk.
         </motion.p>

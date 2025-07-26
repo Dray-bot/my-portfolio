@@ -42,14 +42,14 @@ const Preloader = () => {
     <AnimatePresence mode="wait">
       {isLoading && (
         <motion.div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-[#0f0f0f]"
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-white dark:bg-black"
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.2, ease: 'easeInOut' }}
         >
           <motion.div
-            className="flex text-emerald-500 text-5xl md:text-7xl font-bold tracking-widest"
+            className="flex text-black dark:text-white text-5xl md:text-7xl font-bold tracking-widest"
             variants={container}
             initial="hidden"
             animate="visible"

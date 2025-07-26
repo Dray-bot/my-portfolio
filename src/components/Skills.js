@@ -61,7 +61,7 @@ export default function Skills() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-[45px] font-bold text-white mb-8"
+          className="text-[45px] font-bold text-black dark:text-white mb-8"
         >
           My <span className="text-emerald-600">Skills</span>
         </motion.h2>
