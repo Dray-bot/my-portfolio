@@ -125,7 +125,7 @@ const Hero = () => {
 
             {/* CV Download Button */}
             <motion.a
-              href="/ajibola-ayomide-samuel-cv.pdf"
+              href="C:\Users\HomePC\my-portfolio\public\img\ajibola-ayomide-samuel-cv.pdf"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
