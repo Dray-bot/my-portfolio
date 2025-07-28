@@ -23,12 +23,29 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen bg-white dark:bg-[#0f172a00] text-gray-800 dark:text-gray-300 flex flex-col justify-center max-w-screen box-border px-4 sm:px-6 md:px-12 lg:px-20 overflow-hidden">
+      
+      {/* BACKGROUND MOVING TEXT */}
+      <motion.div
+        className="absolute bottom-6 sm:bottom-8 left-0 w-[250%] sm:w-[200%] md:w-[150%] lg:w-[120%] text-center z-0 select-none pointer-events-none"
+        initial={{ x: '100%' }}
+        animate={{ x: '-100%' }}
+        transition={{
+          duration: 18, // Speed up a little
+          repeat: Infinity,
+          ease: 'linear',
+        }}
+      >
+        <h1 className="text-[150px] sm:text-[110px] md:text-[140px] lg:text-[180px] font-bold text-gray-200 dark:text-white/10 whitespace-nowrap tracking-tight">
+          Ajibola Ayomide Samuel
+        </h1>
+      </motion.div>
+
       {/* MOBILE IMAGE + SOCIAL ICONS */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="z-10 md:hidden mt-6 w-full flex flex-col items-center"
+        className="relative z-10 md:hidden mt-6 w-full flex flex-col items-center"
       >
         <div className="flex flex-col items-center gap-3">
           {/* IMAGE */}
@@ -62,7 +79,7 @@ const Hero = () => {
       </motion.div>
 
       {/* TEXT & DESKTOP GRID */}
-      <div className="z-10 flex flex-col md:flex-row items-center justify-between w-full mt-8 md:mt-0 gap-6 md:gap-10">
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-between w-full mt-8 md:mt-0 gap-6 md:gap-10">
         {/* LEFT TEXT BLOCK */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -125,7 +142,7 @@ const Hero = () => {
 
             {/* CV Download Button */}
             <motion.a
-              href="\img\ajibola-ayomide-samuel-cv.pdf"
+              href="/img/ajibola-ayomide-samuel-cv.pdf"
               download
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -172,22 +189,6 @@ const Hero = () => {
           </div>
         </motion.div>
       </div>
-
-      {/* BACKGROUND MOVING TEXT */}
-      <motion.div
-        className="absolute bottom-6 sm:bottom-8 w-full text-center z-0 select-none pointer-events-none"
-        initial={{ x: '100%' }}
-        animate={{ x: '-100%' }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: 'linear',
-        }}
-      >
-        <h1 className="text-[150px] sm:text-[110px] md:text-[140px] lg:text-[180px] font-bold text-gray-200 dark:text-white/10 whitespace-nowrap tracking-tight">
-          Ajibola Ayomide Samuel
-        </h1>
-      </motion.div>
     </section>
   )
 }

@@ -35,21 +35,33 @@ const Preloader = () => {
       setIsLoading(false)
     }, 2000)
 
-    return () => clearTimeout(timer)
-  }, [])
+    // Lock scroll while loading
+    if (isLoading) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+
+    return () => {
+      clearTimeout(timer)
+      document.body.style.overflow = ''
+    }
+  }, [isLoading])
 
   return (
     <AnimatePresence mode="wait">
       {isLoading && (
         <motion.div
-          className="fixed inset-0 z-[9999] flex items-center justify-center bg-white dark:bg-black"
+          className={`fixed inset-0 z-[9999] flex items-center justify-center bg-white dark:bg-black ${
+            !isLoading ? 'pointer-events-none' : ''
+          }`}
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1.2, ease: 'easeInOut' }}
         >
           <motion.div
-            className="flex text-black dark:text-white text-5xl md:text-7xl font-bold tracking-widest"
+            className="flex text-4xl sm:text-5xl md:text-7xl font-bold tracking-widest"
             variants={container}
             initial="hidden"
             animate="visible"
