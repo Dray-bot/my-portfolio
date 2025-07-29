@@ -1,15 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import {
-  Home,
-  User,
-  Folder,
-  Mail,
-  LayoutGrid,
-  X,
-} from 'lucide-react'
+import { Home, User, Folder, Mail, LayoutGrid, X } from 'lucide-react'
 
 const navLinks = [
   { name: 'Home' },
@@ -20,6 +13,24 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [showMobileNav, setShowMobileNav] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const aboutSection = document.getElementById('about')
+      if (aboutSection) {
+        const { top } = aboutSection.getBoundingClientRect()
+        if (top <= 80) {
+          setShowMobileNav(true)
+        } else {
+          setShowMobileNav(false)
+        }
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <>
@@ -41,18 +52,20 @@ export default function Navbar() {
       </nav>
 
       {/* Mobile Bottom Navbar */}
-      <div className="fixed bottom-0 left-0 w-full z-50 bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800">
-        <div className="flex justify-between items-center px-4 sm:px-6 py-3 md:hidden max-w-7xl mx-auto w-full">
-          <h1 className="text-gray-900 dark:text-white font-bold text-lg select-none">DRAY</h1>
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label={isOpen ? 'Close menu' : 'Open menu'}
-            className="text-gray-900 dark:text-white bg-black/10 dark:bg-white/10 p-2 rounded-xl hover:bg-black/20 dark:hover:bg-white/20 transition focus:outline-none focus:ring-2 focus:ring-emerald-500"
-          >
-            {isOpen ? <X size={24} /> : <LayoutGrid size={24} />}
-          </button>
+      {showMobileNav && (
+        <div className="fixed bottom-0 left-0 w-full z-50 bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800 md:hidden">
+          <div className="flex justify-between items-center px-4 sm:px-6 py-3 max-w-7xl mx-auto w-full">
+            <h1 className="text-gray-900 dark:text-white font-bold text-lg select-none">DRAY</h1>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+              className="text-gray-900 dark:text-white bg-black/10 dark:bg-white/10 p-2 rounded-xl hover:bg-black/20 dark:hover:bg-white/20 transition focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            >
+              {isOpen ? <X size={24} /> : <LayoutGrid size={24} />}
+            </button>
+          </div>
         </div>
-      </div>
+      )}
 
       {/* Mobile Bottom Drawer */}
       <AnimatePresence>
@@ -62,7 +75,7 @@ export default function Navbar() {
             animate={{ y: 0 }}
             exit={{ y: '100%' }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed bottom-[3.5rem] left-0 w-full max-h-[calc(100vh-3.5rem)] bg-white dark:bg-[#111] text-gray-900 dark:text-white rounded-t-2xl z-[9999] md:hidden overflow-auto"
+            className="fixed bottom-[3.5rem] left-0 w-full max-h-[calc(100vh-3.5rem)] bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-t-2xl z-[9999] md:hidden overflow-auto"
           >
             <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 pt-6 pb-4">
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
