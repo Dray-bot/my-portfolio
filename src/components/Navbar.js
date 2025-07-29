@@ -75,7 +75,7 @@ export default function Navbar() {
             animate={{ y: 0 }}
             exit={{ y: '100%' }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-            className="fixed bottom-[3.5rem] left-0 w-full max-h-[calc(100vh-3.5rem)] bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-t-2xl z-[9999] md:hidden overflow-auto"
+            className="fixed bottom-[3.5rem] left-0 w-full max-h-[calc(100vh-3.5rem)] bg-white dark:bg-black text-gray-900 dark:text-white rounded-t-2xl z-[9999] md:hidden overflow-auto"
           >
             <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 pt-6 pb-4">
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
