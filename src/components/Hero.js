@@ -22,17 +22,19 @@ const Hero = () => {
   }, [])
 
   return (
-    <section className="relative min-h-screen bg-white dark:bg-[#0f172a00] text-gray-800 dark:text-gray-300 flex flex-col justify-center max-w-screen box-border px-4 sm:px-6 md:px-12 lg:px-20 overflow-hidden">
+    <section className="relative min-h-screen bg-white dark:bg-[#0f172a00] text-gray-800 dark:text-gray-300 flex flex-col justify-center max-w-screen box-border px-4 sm:px-6 md:px-12 lg:px-20 overflow-hidden z">
       
       {/* BACKGROUND MOVING TEXT */}
       <motion.div
-        className="absolute bottom-6 sm:bottom-8 left-0 w-[250%] sm:w-[200%] md:w-[150%] lg:w-[120%] text-center z-0 select-none pointer-events-none"
-        initial={{ x: '100%' }}
-        animate={{ x: '-100%' }}
+        className="absolute bottom-12 sm:bottom-8 left-0 w-[250%] sm:w-[200%] md:w-[150%] lg:w-[120%] text-center z-0 select-none pointer-events-none"
+        animate={{ 
+          x: ['70%', '-50%', '-55%', '0%', '5%', '-90%', '-200%']
+        }}
         transition={{
-          duration: 18, // Speed up a little
+          duration: 20, // Speed up a little
+          times: [0, 0.4, 0.5, 0.8, 0.9, 1],
           repeat: Infinity,
-          ease: 'linear',
+          ease: 'easeInOut',
         }}
       >
         <h1 className="text-[150px] sm:text-[110px] md:text-[140px] lg:text-[180px] font-bold text-gray-200 dark:text-white/10 whitespace-nowrap tracking-tight">
