@@ -26,12 +26,12 @@ const Hero = () => {
       
       {/* BACKGROUND MOVING TEXT */}
       <motion.div
-        className="absolute bottom-12 sm:bottom-8 left-0 w-[250%] sm:w-[200%] md:w-[150%] lg:w-[120%] text-center z-0 select-none pointer-events-none"
+        className="absolute bottom-8 sm:bottom-8 left-0 w-[250%] sm:w-[200%] md:w-[150%] lg:w-[120%] text-center z-0 select-none pointer-events-none"
         animate={{ 
           x: ['70%', '-50%', '-55%', '0%', '5%', '-90%', '-200%']
         }}
         transition={{
-          duration: 20, // Speed up a little
+          duration: 25, // Speed up a little
           times: [0, 0.4, 0.5, 0.8, 0.9, 1],
           repeat: Infinity,
           ease: 'easeInOut',
